@@ -124,7 +124,6 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      - ios
       - android:
           filters:
             branches:
