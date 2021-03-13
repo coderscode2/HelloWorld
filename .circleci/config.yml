@@ -60,9 +60,10 @@ jobs:
   #           path: __tests__/e2e/test-results
   #           destination: test-results-ios
   android:
-    macos: # indicate that we are using the macOS executor
-      xcode: 11.7.0
-    environment:
+    docker:
+    - image: circleci/android:api-29-node
+  working_directory: ~/application
+  environment:
       JAVA_HOME: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
       ANDROID_SDK_ROOT: /usr/local/Caskroom/android-sdk/4333796
     steps:
